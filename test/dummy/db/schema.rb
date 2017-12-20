@@ -11,15 +11,26 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171220092415) do
+ActiveRecord::Schema.define(version: 20171220101516) do
+
+  create_table "consent_articles", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "consent_consents", force: true do |t|
     t.integer "user_id",                  null: false
     t.string  "name",                     null: false
-    t.date    "responded_at",             null: false
+    t.date    "responded_at"
     t.integer "status",       default: 0, null: false
   end
 
   add_index "consent_consents", ["user_id"], name: "index_consent_consents_on_user_id"
+
+  create_table "users", force: true do |t|
+    t.string "name"
+    t.string "password"
+  end
 
 end

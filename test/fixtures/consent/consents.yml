@@ -1,0 +1,14 @@
+default:
+  name: data_storage
+  status: 0 # undetermined
+  user: bob (User)
+approved:
+  name: data_storage
+  status: 1 # approved
+  user: bob (User)
+  responded_at: "2017-12-20"
+denied:
+  name: data_storage
+  status: 1 # denied
+  user: bob (User)
+  responded_at: "2017-12-20"
