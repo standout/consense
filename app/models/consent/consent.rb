@@ -8,9 +8,9 @@ module Consent
       denied: 2
     }.freeze
 
-    STATUSES.each do |status, _|
-      define_method("#{status}?") { self[:status] == STATUSES[status] }
-      scope status, -> { where(status: STATUSES.key(status))}
+    STATUSES.each do |status, number|
+      define_method("#{status}?") { self[:status] == number }
+      scope status, -> { where(status: number)}
     end
 
     def status
@@ -18,20 +18,21 @@ module Consent
     end
 
     def approve!
-      respond "approved"
+      respond! "approved"
     end
 
     def deny!
-      respond "denied"
+      respond! "denied"
     end
 
     private
 
-    def respond(new_status)
+    def respond!(new_status)
       return if new_status == "undetermined"
       return if responded_at.present?
       self.status = STATUSES[new_status.to_sym]
       self.responded_at = Date.current
+      self.save!
     end
   end
 end
