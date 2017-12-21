@@ -9,7 +9,7 @@ class PromptableController < ApplicationController
   end
 
   def current_user
-    User.first
+    User.find_by(id: params[:user_id])
   end
 
   def index; head :ok; end

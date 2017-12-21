@@ -6,6 +6,8 @@ Add this to your gemfile: `gem 'consent_prompt', path: 'path/to/consent'`
 
 To mount the engine add this to your *config/routes.rb* file: `mount ConsentPrompt::Engine, at: "/consent"`
 
+Run `rake consent:install:migrations && rake db:migrate`, to import necessary migrations.
+
 # Usage
 Run `rails g consent:consempt_prompt` to generate a view for a specified agreement name. Keep in mind that it must have buttons for accepting and denying the agreement through the engine.
 

@@ -27,4 +27,10 @@ class PromptableControllerTest < ActionController::TestCase
 
     assert_redirected_to "/prompt_consent/my_deal/#{user.id}"
   end
+
+  test "ignores public sessions" do
+    get :index
+
+    assert_response :ok
+  end
 end

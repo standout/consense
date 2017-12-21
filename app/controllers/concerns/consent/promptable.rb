@@ -9,6 +9,7 @@ module Consent::Promptable
   module InstanceMethods
     def prompt_consent(name, approved_path:, denied_path:, user_method: :current_user)
       user = send(user_method)
+      return if user.blank?
       if Consent::Agreement.new(name, user).approved?
         redirect_to approved_path
       else
