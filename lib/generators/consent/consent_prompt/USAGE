@@ -1,0 +1,8 @@
+Description:
+    Generates a view for the given agreement name.
+
+Example:
+    rails generate consent_prompt my_deal
+
+    This will generate:
+        app/views/consent_prompts/my_deal.html.erb

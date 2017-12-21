@@ -1,0 +1,8 @@
+<h1>Please give consent</h1>
+<p>
+  In order for us to honor this agreement, you must
+  first give explicit approval.
+</p>
+
+<%= link_to "Approve", consent_approve_path("my_deal", @user.id) %>
+<%= link_to "Deny", consent_deny_path("my_deal", @user.id) %
