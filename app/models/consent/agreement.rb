@@ -22,12 +22,16 @@ module Consent
     private
 
     def responded_with?(status)
-      responses.send(status)
-               .present?
+      response && response.send("#{status}?")
+    end
+
+    def response
+      responses.last
     end
 
     def responses
-      Consent.where("responded_at IS NOT NULL")
+      Consent.order(id: :asc)
+             .where("responded_at IS NOT NULL")
              .where(name: @name, user: @user)
     end
   end

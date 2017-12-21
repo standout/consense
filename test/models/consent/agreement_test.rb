@@ -24,5 +24,41 @@ module Consent
       assert Agreement.new("my_other_deal", user).responded?
       refute Agreement.new("my_third_deal", user).responded?
     end
+
+    test "considers a deal approved if the last consent was approved" do
+      user = users(:bob)
+
+      Consent.create!(
+        name: "my_deal",
+        user: user,
+      ).approve!
+
+      assert Agreement.new("my_deal", user).approved?
+
+      Consent.create!(
+        name: "my_deal",
+        user: user,
+      ).deny!
+
+      refute Agreement.new("my_deal", user).approved?
+    end
+
+    test "considers a deal denied if the last consent was denied" do
+      user = users(:bob)
+
+      Consent.create!(
+        name: "my_deal",
+        user: user,
+      ).deny!
+
+      assert Agreement.new("my_deal", user).denied?
+
+      Consent.create!(
+        name: "my_deal",
+        user: user,
+      ).approve!
+
+      refute Agreement.new("my_deal", user).denied?
+    end
   end
 end
