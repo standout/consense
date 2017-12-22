@@ -6,7 +6,10 @@ module Consense
     before_action :set_user_id
 
     def prompt
-      render "consent_prompts/#{params[:name]}"
+      respond_to do |format|
+        format.html { return render "consent_prompts/#{params[:name]}" }
+        format.json { head :ok }
+      end
     end
 
     def approve
