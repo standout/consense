@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Consent
+module Consense
   class ConsentsControllerTest < ActionController::TestCase
     test "can approve an agreement" do
       user = users(:bob)

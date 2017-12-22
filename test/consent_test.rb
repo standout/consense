@@ -1,7 +1,7 @@
 require 'test_helper'
 
-class ConsentTest < ActiveSupport::TestCase
+class ConsenseTest < ActiveSupport::TestCase
   test "truth" do
-    assert_kind_of Module, Consent
+    assert_kind_of Module, Consense
   end
 end

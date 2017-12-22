@@ -1,4 +1,4 @@
-module Consent
+module Consense
   class ConsentsController < ApplicationController
     include Rails.application.routes.url_helpers
 

@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    consent (0.0.1)
+    consense (0.0.1)
       rails (~> 4.1.0)
 
 GEM
@@ -80,7 +80,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  consent!
+  consense!
   sqlite3
 
 BUNDLED WITH

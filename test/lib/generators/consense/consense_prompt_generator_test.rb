@@ -1,7 +1,7 @@
 require 'test_helper'
-require 'generators/consent/consent_prompt/consent_prompt_generator'
+require 'generators/consense/consent_prompt/consent_prompt_generator'
 
-module Consent
+module Consense
   class ConsentPromptGeneratorTest < Rails::Generators::TestCase
     tests ConsentPromptGenerator
     destination Rails.root.join('tmp/generators')

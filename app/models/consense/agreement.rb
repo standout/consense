@@ -1,4 +1,4 @@
-module Consent
+module Consense
   class Agreement
     attr_reader :name
 
@@ -30,9 +30,9 @@ module Consent
     end
 
     def responses
-      Consent.order(id: :asc)
-             .where("responded_at IS NOT NULL")
-             .where(name: @name, user: @user)
+      Consense::Consent.order(id: :asc)
+                       .where("responded_at IS NOT NULL")
+                       .where(name: @name, user: @user)
     end
   end
 end

@@ -1,6 +1,6 @@
 require 'test_helper'
 
-module Consent
+module Consense
   class AgreementTest < ActiveSupport::TestCase
     test "tells if a user approved, denied or responded to an agreement" do
       user = users(:bob)

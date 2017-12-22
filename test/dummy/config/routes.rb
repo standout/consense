@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  mount Consent::Engine => "/consent"
+  mount Consense::Engine => "/consent"
 
   get "index", to: "promptable#index"
   get "approved", to: "promptable#approved"

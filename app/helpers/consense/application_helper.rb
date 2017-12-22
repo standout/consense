@@ -1,4 +1,4 @@
-module Consent
+module Consense
   module ApplicationHelper
   end
 end

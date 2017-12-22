@@ -1,4 +1,4 @@
-Consent::Engine.routes.draw do
+Consense::Engine.routes.draw do
   get 'prompt_consent/:name/:user_id',
       to: 'consents#prompt',
       as: :prompt_consent

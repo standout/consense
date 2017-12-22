@@ -1,4 +1,4 @@
-class Consent::ConsentPromptGenerator < Rails::Generators::NamedBase
+class Consense::ConsentPromptGenerator < Rails::Generators::NamedBase
   source_root File.expand_path('../templates', __FILE__)
 
   def copy_view_file

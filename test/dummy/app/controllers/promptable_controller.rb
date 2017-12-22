@@ -1,6 +1,6 @@
 class PromptableController < ApplicationController
   include Rails.application.routes.url_helpers
-  include Consent::Promptable
+  include Consense::Promptable
 
   before_action do
     prompt_consent :my_deal,

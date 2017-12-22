@@ -13,14 +13,14 @@
 
 ActiveRecord::Schema.define(version: 20171220095428) do
 
-  create_table "consent_consents", force: true do |t|
+  create_table "consense_consents", force: true do |t|
     t.integer "user_id",                  null: false
     t.string  "name",                     null: false
     t.date    "responded_at"
     t.integer "status",       default: 0, null: false
   end
 
-  add_index "consent_consents", ["user_id"], name: "index_consent_consents_on_user_id"
+  add_index "consense_consents", ["user_id"], name: "index_consense_consents_on_user_id"
 
   create_table "users", force: true do |t|
     t.string "name"
