@@ -3,9 +3,7 @@ class PromptableController < ApplicationController
   include Consense::Promptable
 
   before_action do
-    prompt_consent :my_deal,
-                   approved_path: approved_path,
-                   denied_path: denied_path
+    prompt_consent :my_deal
   end
 
   def current_user

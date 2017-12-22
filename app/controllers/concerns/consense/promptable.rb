@@ -7,14 +7,12 @@ module Consense::Promptable
   end
 
   module InstanceMethods
-    def prompt_consent(name, approved_path:, denied_path:, user_method: :current_user)
+    def prompt_consent(name, user_method: :current_user)
       user = send(user_method)
       return if user.blank?
-      if Consense::Agreement.new(name, user).approved?
-        redirect_to approved_path
-      else
-        redirect_to consense.prompt_consent_path(name, user.id)
-      end
+      return if Consense::Agreement.new(name, user).approved?
+      return if controller_name == "consents" && action_name == "prompt"
+      redirect_to consense.prompt_consent_path(name, user.id)
     end
   end
 end
