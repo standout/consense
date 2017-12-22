@@ -8,6 +8,7 @@ module Consense::Promptable
 
   module InstanceMethods
     def prompt_consent(name, user_method: :current_user)
+      return if Consense::disable_prompts_in_test_environment && Rails.env.test?
       user = send(user_method)
       return if user.blank?
       return if Consense::Agreement.new(name, user).approved?
