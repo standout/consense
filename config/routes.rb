@@ -3,11 +3,11 @@ Consense::Engine.routes.draw do
       to: 'consents#prompt',
       as: :prompt_consent
 
-  put 'approve/:name/:user_id',
+  get 'approve/:name/:user_id',
       to: 'consents#approve',
       as: :approve
 
-  put 'deny/:name/:user_id',
+  get 'deny/:name/:user_id',
       to: 'consents#deny',
       as: :deny
 end
