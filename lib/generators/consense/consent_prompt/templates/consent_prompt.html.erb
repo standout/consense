@@ -1,8 +1,13 @@
-<h1>Please give consent</h1>
-<p>
-  In order for us to honor this agreement, you must
-  first give explicit approval.
-</p>
+<div class="consempt-prompt">
+  <h2>Godkänn nya villkor</h2>
+  <p class="description">
+    In order for us to honor this agreement, you must
+    first give explicit approval.
+  </p>
 
-<%= link_to "Approve", consense.approve_path("my_deal", @user_id, approved_path: "/") %>
-<%= link_to "Deny", consense.deny_path("my_deal", @user_id, denied_path: "/signout") %>
+  <div class="buttons">
+    <%= link_to "Approve", consense.approve_path("my_deal", @user_id, approved_path: "/"), class: "button-approve" %>
+    <%= link_to "Deny", consense.deny_path("my_deal", @user_id, denied_path: "/signout"), class: "button-deny" %>
+  </div>
+</div>
+

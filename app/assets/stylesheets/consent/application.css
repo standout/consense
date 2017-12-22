@@ -13,3 +13,64 @@
  *= require_tree .
  *= require_self
  */
+
+body, html {
+  font-family: 'Open Sans', sans-serif;
+  background: #3c4042;
+  position: relative;
+  padding: 20px;
+  height: 100%;
+  margin: 0;
+}
+
+.consempt-prompt {
+  box-shadow: 4px 4px 32px rgba(0, 0, 0, 0.4);
+  transform: translate(-50%, -50%);
+  border-radius: 10px;
+  background: white;
+  position: absolute;
+  padding: 30px;
+  width: 100%;
+  left: 50%;
+  top: 50%;
+}
+
+@media (min-width: 500px) {
+  .consempt-prompt { width: 500px; }
+}
+
+.consempt-prompt h2 {
+  border-bottom: 1px solid #d1d1d1;
+  padding-bottom: 10px;
+}
+
+.consempt-prompt .description {
+  color: #4f5256;
+}
+
+.button-accept, .button-deny {
+  border-right: 4px solid;
+  border-bottom: 4px solid;
+  border-radius: 3px;
+  padding: 8px 25px;
+  color: white;
+}
+
+.button-accept:hover, .button-deny:hover {
+  border-color: transparent;
+  color: white;
+}
+
+.button-accept {
+  border-color: #1c5f1c;
+  background: #2e9a2e;
+}
+
+.button-deny {
+  border-color: #841516;
+  background: #e43232;
+}
+
+.consempt-prompt .description {
+  margin-bottom: 30px;
+}
