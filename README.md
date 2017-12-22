@@ -2,14 +2,14 @@
 A rails engine made for giving consent!
 
 ## Installing
-Add this to your gemfile: `gem 'consent_prompt', path: 'path/to/consent'`
+Add this to your gemfile: `gem 'consense', path: 'path/to/consense'`
 
 To mount the engine add this to your *config/routes.rb* file: `mount Consense::Engine, at: "/consense"`
 
-Run `rake consent:install:migrations && rake db:migrate`, to import necessary migrations.
+Run `rake consense:install:migrations && rake db:migrate`, to import necessary migrations.
 
 # Usage
-Run `rails g consent:consempt_prompt` to generate a view for a specified agreement name. Keep in mind that it must have buttons for accepting and denying the agreement through the engine.
+Run `rails g consense:consempt_prompt` to generate a view for a specified agreement name. Keep in mind that it must have buttons for accepting and denying the agreement through the engine.
 
 To prompt the newly generated view, add this to a controller:
 ```ruby

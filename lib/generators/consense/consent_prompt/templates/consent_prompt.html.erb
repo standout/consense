@@ -4,5 +4,5 @@
   first give explicit approval.
 </p>
 
-<%= link_to "Approve", consent_approve_path("my_deal", @user.id) %>
-<%= link_to "Deny", consent_deny_path("my_deal", @user.id) %
+<%= link_to "Approve", consense.approve_path("my_deal", @user_id, approved_path: "/") %>
+<%= link_to "Deny", consense.deny_path("my_deal", @user_id, denied_path: "/signout") %>

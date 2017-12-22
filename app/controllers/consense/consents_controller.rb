@@ -3,6 +3,7 @@ module Consense
     include Rails.application.routes.url_helpers
 
     before_action :set_consent
+    before_action :set_user_id
 
     def prompt
       render "consent_prompts/#{params[:name]}"
@@ -33,6 +34,10 @@ module Consense
         name: params[:name],
         user_id: params[:user_id]
       )
+    end
+
+    def set_user_id
+      @user_id = params[:user_id]
     end
   end
 end
