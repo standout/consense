@@ -2,7 +2,7 @@
 A rails engine made for giving consent!
 
 ## Installing
-Add this to your gemfile: `gem 'consense', git: 'git://github.com/standout/consense'`
+Add this to your gemfile: `gem 'consense', git: 'https://github.com/standout/consense'`
 
 To mount the engine add this to your *config/routes.rb* file: `mount Consense::Engine, at: "/consense"`
 
