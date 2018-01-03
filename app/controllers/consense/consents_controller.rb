@@ -1,8 +1,6 @@
 module Consense
-  class ConsentsController < ApplicationController
+  class ConsentsController < Consense::ApplicationController
     include Rails.application.routes.url_helpers
-
-    layout "consense/application"
 
     before_action :set_consent
     before_action :set_user_id
